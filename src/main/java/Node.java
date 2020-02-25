@@ -1,6 +1,11 @@
-public class Node {
-    private Integer key;
-    private Long value;
+final public class Node {
+    private int key;
+    private long value;
+
+    public Node(int key, long value) {
+        this.key = key;
+        this.value = value;
+    }
 
     @Override
     public String toString() {
@@ -14,20 +19,8 @@ public class Node {
         return key;
     }
 
-    public void setKey(Integer key) {
-        this.key = key;
-    }
-
     public Long getValue() {
         return value;
     }
 
-    public void setValue(Long value) {
-        this.value = value;
-    }
-
-    public Node(Integer key, Long value) {
-        this.key = key;
-        this.value = value;
-    }
 }
