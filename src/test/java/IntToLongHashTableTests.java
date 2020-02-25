@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 
-public class CustomTableTest{
+public class IntToLongHashTableTests{
      IntToLongHashTable table;
      @Before
      public void initializeTable(){
@@ -60,8 +60,7 @@ public class CustomTableTest{
          table.put(1,1l);
     }
     @Test
-    public void test(){
-         //initial capacity of table is 7 for testing purpose
+    public void shouldResizeAfterSevenElementsAndSuccessfullyInsertEightElement(){
         table.put(1,1l);
         table.put(2,2l);
         table.put(3,3l);
@@ -70,7 +69,7 @@ public class CustomTableTest{
         table.put(6,6l);
         table.put(7,7l);
         table.put(8,8l);
-
+        Assert.assertEquals(table.get(8),8l);
     }
 
 
