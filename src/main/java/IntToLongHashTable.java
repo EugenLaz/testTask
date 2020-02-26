@@ -13,7 +13,7 @@ public class IntToLongHashTable {
         currentSize = 0;
     }
 
-    public int getSize() {
+    public int size() {
         return currentSize;
     }
 
@@ -22,7 +22,7 @@ public class IntToLongHashTable {
     }
 
     //Inserting new element. The index is counted with Quadratic probing method
-    public void put(Integer key, Long value) {
+    public void put(int key, long value) {
         int startingElement = hash(key);
         int currentPosition = startingElement;
         int quadraticFactor = 1;
@@ -43,15 +43,16 @@ public class IntToLongHashTable {
         put(key, value);
     }
 
-    public long get(int key) {
-        int i = hash(key), quadraticFactor = 1;
+    public Long get(int key) {
+        int i = hash(key);
+        int quadraticFactor = 1;
         while (nodeArray[i] != null) {
             if (nodeArray[i].getKey() == key)
                 return nodeArray[i].getValue();
             //If expected slot does not contain element with given key Try next slot considering QuadraticFactor
             i = (i + quadraticFactor * quadraticFactor++) % capacity;
         }
-        throw new NoSuchElementException();
+        return null;
     }
 
     private void resize() {

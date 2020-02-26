@@ -1,6 +1,6 @@
-final public class Node {
-    private int key;
-    private long value;
+public class Node {
+    private final int key;
+    private final long value;
 
     public Node(int key, long value) {
         this.key = key;
